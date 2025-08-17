@@ -3,6 +3,7 @@ import { Container, Grid, Typography, Box } from '@mui/material';
 import Header from './components/Header';
 import ProductCard from './components/ProductCard';
 import AboutUs from './components/AboutUs';
+import HomePage from './components/HomePage';
 
 const allProducts = [
   // Cozinha
@@ -11,11 +12,9 @@ const allProducts = [
   { id: 3, category: 'cozinha', title: 'Electrolux, Pote Hermetico, 12 unidades', price: '95,83', image: 'https://m.media-amazon.com/images/I/51uccv-jBiL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Kit-Potes-Herm%C3%A9ticos-Pl%C3%A1stico-Electrolux/dp/B09XJL4B9H?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=1dd87112850b8b2bf6da388359a5ba72&language=pt_BR&ref_=as_li_ss_tl' },
   { id: 4, category: 'cozinha', title: 'Liquidificador Mondial, Turbo Power 550W', price: '94,91', image: 'https://m.media-amazon.com/images/I/71KFAoTV+hL._AC_SY879_.jpg', url: 'https://www.amazon.com.br/Liquidificador-Mondial-L-99-LB-220V/dp/B07QK91PTZ?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=1d30c9c7a22053e5ca21aa8373bf6f75&language=pt_BR&ref_=as_li_ss_tl'},
   { id: 5, category: 'cozinha', title: 'Agratto, 783, Chaleira Elétrica', price: '62,85', image: 'https://m.media-amazon.com/images/I/51CmxAPMOML._AC_SX679_.jpg', url: 'https://www.amazon.com.br/CHALEIRA-ELETRICA-AGRATTO-Agratto-783/dp/B075THG2KJ?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=a6308d25b418ac2a650f1daf0ded8ec4&language=pt_BR&ref_=as_li_ss_tl'},
-  { id: 6, category: 'cozinha', title: 'BLACK+DECKER Mixer, Misturador Multiuso', prince: '47,90', image: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg', url: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg'},
-  { id: 7, category: 'cozinha', title: 'Filtro/Refil Original de Água para Purificador Electrolux', prince: '64,72', image: 'https://m.media-amazon.com/images/I/41E+DC4dxwL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Refil-Filtro-Electrolux-Purificadores-PE11B/dp/B07B9ZYR6B?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e410c297b10dcdbab6367d6a8a821b4c&language=pt_BR&ref_=as_li_ss_tl'},
+  { id: 6, category: 'cozinha', title: 'BLACK+DECKER Mixer, Misturador Multiuso', price: '47,90', image: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg', url: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg'},
+  { id: 7, category: 'cozinha', title: 'Filtro/Refil Original de Água para Purificador Electrolux', price: '64,72', image: 'https://m.media-amazon.com/images/I/41E+DC4dxwL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Refil-Filtro-Electrolux-Purificadores-PE11B/dp/B07B9ZYR6B?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e410c297b10dcdbab6367d6a8a821b4c&language=pt_BR&ref_=as_li_ss_tl'},
   { id: 8, category: 'cozinha', title: 'Fritadeira Air Fryer Forno Oven 12L, Mondial', price: '559,56', image: 'https://m.media-amazon.com/images/I/51wwp25UBVL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Forno-Litros-Mondial/dp/B0BZJDLT6Z?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e04eac139ad2c79c35ffce1edd19467a&language=pt_BR&ref_=as_li_ss_tl'},
-  {},
-  {},
   // Eletrodomésticos
   { id: 11, category: 'eletrodomesticos', title: 'Fritadeira Elétrica sem Óleo (Air Fryer) 4L', price: '399,00', image: 'https://placehold.co/300x300/6A7B33/FFFFFF?text=Air+Fryer', url: 'https://www.amazon.com.br/dp/B08J7R8B2Q' },
   { id: 12, category: 'eletrodomesticos', title: 'Liquidificador Turbo com 12 Velocidades', price: '189,90', image: 'https://placehold.co/300x300/D95D39/FFFFFF?text=Liquidificador', url: 'https://www.amazon.com.br/dp/B07X2Y44D3' },
@@ -31,6 +30,7 @@ const allProducts = [
 ];
 
 const categoryTitles = {
+  home: 'Página Principal',
   cozinha: 'Ofertas para a sua Cozinha',
   eletrodomesticos: 'Eletrodomésticos em Promoção',
   games: 'Promoções para Gamers',
@@ -39,11 +39,37 @@ const categoryTitles = {
 };
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('cozinha');
+  const [selectedCategory, setSelectedCategory] = useState('home');
 
-  const filteredProducts = allProducts.filter(
-    (product) => product.category === selectedCategory
-  );
+  const renderContent = () => {
+    if (selectedCategory === 'home') {
+      return <HomePage onCategoryChange={setSelectedCategory} products={allProducts} />;
+    }
+    if (selectedCategory === 'quemsomos') {
+      return <AboutUs />;
+    }
+
+    const filteredProducts = allProducts.filter(
+      (product) => product.category === selectedCategory
+    );
+
+    return (
+      <>
+        <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'text.secondary', fontWeight: 'bold' }}>
+          {categoryTitles[selectedCategory]}
+        </Typography>
+        <Grid container spacing={4}>
+          {filteredProducts.map((product) => (
+            product.id && (
+              <Grid item key={product.id} xs={12} sm={6} md={4}>
+                <ProductCard product={product} />
+              </Grid>
+            )
+          ))}
+        </Grid>
+      </>
+    );
+  };
 
   return (
     <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
@@ -52,22 +78,7 @@ function App() {
         onCategoryChange={setSelectedCategory} 
       />
       <Container sx={{ py: 4 }}>
-        {selectedCategory === 'quemsomos' ? (
-          <AboutUs />
-        ) : (
-          <>
-            <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'text.secondary', fontWeight: 'bold' }}>
-              {categoryTitles[selectedCategory]}
-            </Typography>
-            <Grid container spacing={4}>
-              {filteredProducts.map((product) => (
-                <Grid item key={product.id} xs={12} sm={6} md={4}>
-                  <ProductCard product={product} />
-                </Grid>
-              ))}
-            </Grid>
-          </>
-        )}
+        {renderContent()}
       </Container>
     </Box>
   );
