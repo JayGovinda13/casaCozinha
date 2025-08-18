@@ -15,7 +15,22 @@ function ProductCard({ product }) {
         alt={product.title}
       />
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography gutterBottom variant="body1" component="div" sx={{ fontWeight: 'bold', color: 'text.primary' }}>
+        <Typography 
+          gutterBottom 
+          variant="body1" 
+          component="div" 
+          sx={{ 
+            fontWeight: 'bold', 
+            color: 'text.primary',
+            // Garante que a área do título tenha sempre a altura de 2 linhas
+            height: '3.2em', 
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+          }}
+        >
           {product.title}
         </Typography>
         <Box>
@@ -27,7 +42,7 @@ function ProductCard({ product }) {
       <Box sx={{ p: 2, pt: 0 }}>
         <Button
           variant="contained"
-          color="secondary" // Botão agora usa a cor secundária (terracota)
+          color="secondary"
           fullWidth
           href={productUrl}
           target="_blank"

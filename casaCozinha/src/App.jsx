@@ -15,6 +15,8 @@ const allProducts = [
   { id: 6, category: 'cozinha', title: 'BLACK+DECKER Mixer, Misturador Multiuso', price: '47,90', image: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg', url: 'https://m.media-amazon.com/images/I/51Zkm1ug2WL._AC_SX679_.jpg'},
   { id: 7, category: 'cozinha', title: 'Filtro/Refil Original de Água para Purificador Electrolux', price: '64,72', image: 'https://m.media-amazon.com/images/I/41E+DC4dxwL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Refil-Filtro-Electrolux-Purificadores-PE11B/dp/B07B9ZYR6B?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e410c297b10dcdbab6367d6a8a821b4c&language=pt_BR&ref_=as_li_ss_tl'},
   { id: 8, category: 'cozinha', title: 'Fritadeira Air Fryer Forno Oven 12L, Mondial', price: '559,56', image: 'https://m.media-amazon.com/images/I/51wwp25UBVL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Forno-Litros-Mondial/dp/B0BZJDLT6Z?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e04eac139ad2c79c35ffce1edd19467a&language=pt_BR&ref_=as_li_ss_tl'},
+  { id: 9, category: 'cozinha', title: 'Liquidificador 1400 Full Oster Preto', price: '199,00', image: 'https://m.media-amazon.com/images/I/51N3Xi4JJML._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Liquidificador-1400-Full-Preto-Oster/dp/B08DFCF9HW?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=92ab972606831b54b88c827936892b31&language=pt_BR&ref_=as_li_ss_tl'},
+  {id: 10, category: 'cozinha', title: 'Fritadeira Sem Óleo Air Fryer 4L', price: '243,87', image: 'https://m.media-amazon.com/images/I/71zeBuMlz2L._AC_SY879_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Litros-AFN-40-BI-Mondial/dp/B093M9941C?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=f55630519c99abcb0fa49b41b1e5d0fb&language=pt_BR&ref_=as_li_ss_tl'},
   // Eletrodomésticos
   { id: 11, category: 'eletrodomesticos', title: 'Fritadeira Elétrica sem Óleo (Air Fryer) 4L', price: '399,00', image: 'https://placehold.co/300x300/6A7B33/FFFFFF?text=Air+Fryer', url: 'https://www.amazon.com.br/dp/B08J7R8B2Q' },
   { id: 12, category: 'eletrodomesticos', title: 'Liquidificador Turbo com 12 Velocidades', price: '189,90', image: 'https://placehold.co/300x300/D95D39/FFFFFF?text=Liquidificador', url: 'https://www.amazon.com.br/dp/B07X2Y44D3' },
@@ -31,7 +33,7 @@ const allProducts = [
 
 const categoryTitles = {
   home: 'Página Principal',
-  cozinha: 'Ofertas para a sua Cozinha',
+  cozinha: 'Os Melhores Produtos para a Sua Cozinha',
   eletrodomesticos: 'Eletrodomésticos em Promoção',
   games: 'Promoções para Gamers',
   jardim: 'Tudo para o seu Jardim',
@@ -61,7 +63,7 @@ function App() {
         <Grid container spacing={4}>
           {filteredProducts.map((product) => (
             product.id && (
-              <Grid item key={product.id} xs={12} sm={6} md={4}>
+              <Grid item key={product.id} xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
                 <ProductCard product={product} />
               </Grid>
             )
