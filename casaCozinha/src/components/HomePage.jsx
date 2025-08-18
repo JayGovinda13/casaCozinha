@@ -4,12 +4,14 @@ import KitchenIcon from '@mui/icons-material/Kitchen';
 import BlenderIcon from '@mui/icons-material/Blender';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import YardIcon from '@mui/icons-material/Yard';
-import ProductCard from './ProductCard'; // Importa o ProductCard para usar aqui
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'; // Novo ícone
+import ProductCard from './ProductCard';
 
 const categoryCards = [
     { key: 'cozinha', title: 'Cozinha', description: 'Panelas, utensílios e tudo para suas receitas.', icon: <KitchenIcon sx={{ fontSize: 40 }} color="primary" /> },
     { key: 'eletrodomesticos', title: 'Eletrodomésticos', description: 'As melhores ofertas em air fryers, liquidificadores e mais.', icon: <BlenderIcon sx={{ fontSize: 40 }} color="primary" /> },
     { key: 'games', title: 'Games', description: 'Controles, headsets e acessórios para gamers.', icon: <SportsEsportsIcon sx={{ fontSize: 40 }} color="primary" /> },
+    { key: 'eletronicos', title: 'Eletrônicos', description: 'Smartphones, TVs e acessórios em oferta.', icon: <PhoneIphoneIcon sx={{ fontSize: 40 }} color="primary" /> },
     { key: 'jardim', title: 'Jardim', description: 'Ferramentas e acessórios para cuidar do seu jardim.', icon: <YardIcon sx={{ fontSize: 40 }} color="primary" /> },
 ];
 
@@ -17,7 +19,8 @@ function HomePage({ onCategoryChange, products }) {
     // Seleciona alguns produtos de destaque de diferentes categorias
     const featuredProducts = [
         ...products.filter(p => p.category === 'cozinha').slice(0, 2),
-        ...products.filter(p => p.category === 'eletrodomesticos').slice(0, 2),
+        ...products.filter(p => p.category === 'eletrodomesticos').slice(0, 1),
+        ...products.filter(p => p.category === 'eletronicos').slice(0, 1),
         ...products.filter(p => p.category === 'games').slice(0, 1),
         ...products.filter(p => p.category === 'jardim').slice(0, 1),
     ].filter(p => p.id); // Garante que não há produtos vazios
@@ -33,7 +36,7 @@ function HomePage({ onCategoryChange, products }) {
                 </Typography>
                 <Grid container spacing={4} justifyContent="center">
                     {categoryCards.map((cat) => (
-                        <Grid item key={cat.key} xs={12} sm={6} md={3}>
+                        <Grid item key={cat.key} xs={12} sm={6} md={2.4}>
                             <Card sx={{ height: '100%', '&:hover': { transform: 'scale(1.05)', transition: 'transform 0.2s' } }}>
                                 <CardActionArea onClick={() => onCategoryChange(cat.key)} sx={{ p: 3, height: '100%' }}>
                                     <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>

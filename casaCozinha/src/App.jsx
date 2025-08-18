@@ -16,10 +16,10 @@ const allProducts = [
   { id: 7, category: 'cozinha', title: 'Filtro/Refil Original de Água para Purificador Electrolux', price: '64,72', image: 'https://m.media-amazon.com/images/I/41E+DC4dxwL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Refil-Filtro-Electrolux-Purificadores-PE11B/dp/B07B9ZYR6B?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e410c297b10dcdbab6367d6a8a821b4c&language=pt_BR&ref_=as_li_ss_tl'},
   { id: 8, category: 'cozinha', title: 'Fritadeira Air Fryer Forno Oven 12L, Mondial', price: '559,56', image: 'https://m.media-amazon.com/images/I/51wwp25UBVL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Forno-Litros-Mondial/dp/B0BZJDLT6Z?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e04eac139ad2c79c35ffce1edd19467a&language=pt_BR&ref_=as_li_ss_tl'},
   { id: 9, category: 'cozinha', title: 'Liquidificador 1400 Full Oster Preto', price: '199,00', image: 'https://m.media-amazon.com/images/I/51N3Xi4JJML._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Liquidificador-1400-Full-Preto-Oster/dp/B08DFCF9HW?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=92ab972606831b54b88c827936892b31&language=pt_BR&ref_=as_li_ss_tl'},
-  {id: 10, category: 'cozinha', title: 'Fritadeira Sem Óleo Air Fryer 4L', price: '243,87', image: 'https://m.media-amazon.com/images/I/71zeBuMlz2L._AC_SY879_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Litros-AFN-40-BI-Mondial/dp/B093M9941C?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=f55630519c99abcb0fa49b41b1e5d0fb&language=pt_BR&ref_=as_li_ss_tl'},
+  { id: 10, category: 'cozinha', title: 'Fritadeira Sem Óleo Air Fryer 4L', price: '243,87', image: 'https://m.media-amazon.com/images/I/71zeBuMlz2L._AC_SY879_.jpg', url: 'https://www.amazon.com.br/Fritadeira-Fryer-Litros-AFN-40-BI-Mondial/dp/B093M9941C?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=f55630519c99abcb0fa49b41b1e5d0fb&language=pt_BR&ref_=as_li_ss_tl'},
   // Eletrodomésticos
-  { id: 11, category: 'eletrodomesticos', title: 'Fritadeira Elétrica sem Óleo (Air Fryer) 4L', price: '399,00', image: 'https://placehold.co/300x300/6A7B33/FFFFFF?text=Air+Fryer', url: 'https://www.amazon.com.br/dp/B08J7R8B2Q' },
-  { id: 12, category: 'eletrodomesticos', title: 'Liquidificador Turbo com 12 Velocidades', price: '189,90', image: 'https://placehold.co/300x300/D95D39/FFFFFF?text=Liquidificador', url: 'https://www.amazon.com.br/dp/B07X2Y44D3' },
+  { id: 11, },
+  { id: 12, category: 'eletrodomesticos', title: 'Frigobar Philco', price: '1.013,06', image: 'https://m.media-amazon.com/images/I/31TfOR16AjL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Frigobar-Philco-PFG85P-N%C3%ADveis-Temperatura/dp/B0BTQ2K81C?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=d76b94c176f9af9025a3999a008890f6&language=pt_BR&ref_=as_li_ss_tl' },
   { id: 13, category: 'eletrodomesticos', title: 'Robô Aspirador de Pó Inteligente', price: '1299,00', image: 'https://placehold.co/300x300/6A7B33/FFFFFF?text=Robô+Aspirador', url: 'https://www.amazon.com.br/dp/B091G2Y45P' },
   { id: 14, category: 'eletrodomesticos', title: 'Cafeteira Expresso Automática', price: '899,00', image: 'https://placehold.co/300x300/D95D39/FFFFFF?text=Cafeteira', url: 'https://www.amazon.com.br/dp/B083Q6F15D' },
   // Games
@@ -29,12 +29,18 @@ const allProducts = [
   // Jardim
   { id: 31, category: 'jardim', title: 'Kit de Ferramentas para Jardinagem 10 Peças', price: '119,90', image: 'https://placehold.co/300x300/D95D39/FFFFFF?text=Ferramentas', url: 'https://www.amazon.com.br/dp/B07YF3434K' },
   { id: 32, category: 'jardim', title: 'Mangueira de Jardim Expansível 30m', price: '89,90', image: 'https://placehold.co/300x300/6A7B33/FFFFFF?text=Mangueira', url: 'https://www.amazon.com.br/dp/B08J7R8B2Q' },
+  // Eletrônicos
+  { id: 41, category: 'eletronicos', title: 'Fire TV Stick HD', price: '318,25', image: 'https://m.media-amazon.com/images/I/61K7fAOac9L._AC_SX679_.jpg', url: 'https://www.amazon.com.br/fire-tv-stick-hd/dp/B0CQMT33WX?psc=1&linkCode=ll1&tag=casaecozinha13-20&linkId=62461b46b56a72702a706bc580f100a5&language=pt_BR&ref_=as_li_ss_tl' },
+  { id: 42, category: 'eletronicos', title: 'PHILIPS, Fone de Ouvido com Microfone', price: '22,22', image: 'https://m.media-amazon.com/images/I/51+W7A115SL._AC_SX679_.jpg', url:'https://www.amazon.com.br/PHILIPS-Microfone-TAUE101BK-00-intra-auricular/dp/B084S6BCJN?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=e7b98e965e0b5655a1f06e067a96861f&language=pt_BR&ref_=as_li_ss_tl'},
+  { id: 43, category: 'eletronicos', title: 'Echo Pop (Geração mais recente)', price: '348,99', image: 'https://m.media-amazon.com/images/I/8120tVg3AcL._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Echo-Pop-Cor-Preta/dp/B09WXVH7WK?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=3e7144482d405110f19fdf4fc51b1f94&language=pt_BR&ref_=as_li_ss_tl'},
+  { id: 44, category: 'eletronicos', title: 'Fone de Ouvido Philips com Microfone', price: '22,41', image: 'https://m.media-amazon.com/images/I/51xo8ufuc5L._AC_SX679_.jpg', url: 'https://www.amazon.com.br/Fones-Ouvido-Philips-com-Microfone/dp/B084S6N81P?th=1&linkCode=ll1&tag=casaecozinha13-20&linkId=cfcd5a18678744bbc1dc97817e74e88a&language=pt_BR&ref_=as_li_ss_tl'},
 ];
 
 const categoryTitles = {
   home: 'Página Principal',
   cozinha: 'Os Melhores Produtos para a Sua Cozinha',
   eletrodomesticos: 'Eletrodomésticos em Promoção',
+  eletronicos: 'Os Melhores Aparelhos do Momento',
   games: 'Promoções para Gamers',
   jardim: 'Tudo para o seu Jardim',
   quemsomos: 'Sobre Nós'

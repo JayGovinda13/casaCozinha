@@ -8,6 +8,7 @@ const categories = [
   { key: 'home', label: 'Início' },
   { key: 'cozinha', label: 'Cozinha' },
   { key: 'eletrodomesticos', label: 'Eletrodomésticos' },
+  { key: 'eletronicos', label: 'Eletrônicos'},
   { key: 'games', label: 'Games' },
   { key: 'jardim', label: 'Jardim' },
   { key: 'quemsomos', label: 'Quem Somos' },
